@@ -1,4 +1,4 @@
-import 'package:alquran_cloud/quran_api.dart';
+import 'package:alquran_cloud/alquran_cloud.dart';
 import 'package:alquran_cloud/src/wrapper.dart';
 
 /// Returns ayahs that match a keyword in a given edition or language.

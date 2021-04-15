@@ -1,4 +1,4 @@
-import 'package:alquran_cloud/quran_api.dart';
+import 'package:alquran_cloud/alquran_cloud.dart';
 import 'package:dio/dio.dart';
 import 'package:alquran_cloud/src/exception.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';

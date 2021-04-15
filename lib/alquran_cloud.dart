@@ -1,4 +1,4 @@
-library quran_api;
+library alquran_cloud;
 
 export 'package:alquran_cloud/src/entites/index.dart';
 export 'package:alquran_cloud/src/repositories/index.dart';

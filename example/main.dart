@@ -1,6 +1,6 @@
-import 'package:alquran_cloud/quran_api.dart' as quran_cloud;
+import 'package:alquran_cloud/alquran_cloud.dart' as quran_cloud;
 
-void main(List<String> args) async {
+Future<void> main(List<String> args) async {
   /// to enable logs (disabled by default)
   quran_cloud.quranCloud.enableLogs = true;
 
