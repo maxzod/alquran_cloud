@@ -23,6 +23,10 @@ void main(List<String> args) async {
   /// get surah by number and edition
   final surah = await quran_cloud.getSurahByEdition(1, editionsQuery.first);
 
+  /// get aya by number and edition
+  final aya = await quran_cloud.getAyaByNumber(2, editionsQuery.first);
+
+  print(aya.text); // الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
 ```
 
 # Endpoints
