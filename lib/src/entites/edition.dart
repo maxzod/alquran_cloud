@@ -7,7 +7,7 @@ class Edition extends Equatable {
   final String englishName;
   final String format;
   final String type;
-  final String tafsir;
+  final String? tafsir;
 
   const Edition({
     required this.identifier,
@@ -39,7 +39,7 @@ class Edition extends Equatable {
       englishName: map['englishName'] as String,
       format: map['format'] as String,
       type: map['type'] as String,
-      tafsir: map['tafsir'] as String,
+      tafsir: map['tafsir'] as String?,
     );
   }
 
@@ -52,7 +52,7 @@ class Edition extends Equatable {
       englishName,
       format,
       type,
-      tafsir,
+      if (tafsir != null) tafsir!,
     ];
   }
 }
