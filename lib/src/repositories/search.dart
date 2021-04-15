@@ -18,5 +18,5 @@ Future<List<Aya>> search({
   you cant search with both at the same time
   ''');
   final res = await get('/search/$keyword/{{surah}}/${language ?? edition ?? ''}');
-  return (res['data'] as List<Map<String, dynamic>>).map<Aya>((e) => Aya.fromMap(e)).toList();
+  return (res['data'] as List).map<Aya>((e) => Aya.fromMap(e as Map<String, dynamic>)).toList();
 }

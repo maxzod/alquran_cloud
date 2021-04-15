@@ -15,5 +15,5 @@ Future<List<Aya>> getAyaByMultiEdition(List<String> editions) async {
     buffer.write(',${editions[i]}');
   }
   final res = await get('/ayah/${buffer.toString()}');
-  return (res['data'] as List<Map<String, dynamic>>).map<Aya>((e) => Aya.fromMap(e)).toList();
+  return (res['data'] as List).map<Aya>((e) => Aya.fromMap(e as Map<String, dynamic>)).toList();
 }

@@ -1,6 +1,5 @@
 name: alquran_cloud
-description: A starting point for Dart libraries or applications.
-
+description: un-official dart client wrapper for the quran.cloud api consume the holy book of quran
 environment:
   sdk: ">=2.12.0 <3.0.0"
 

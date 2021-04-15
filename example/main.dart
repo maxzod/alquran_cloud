@@ -1,9 +1,5 @@
-# Alquran Cloud
+import 'package:alquran_cloud/quran_api.dart' as quran_cloud;
 
-unofficial api wrapper for the free islamic api alquran.cloud
-usage
-
-```dart
 void main(List<String> args) async {
   /// to enable logs (disabled by default)
   quran_cloud.quranCloud.enableLogs = true;
@@ -23,26 +19,8 @@ void main(List<String> args) async {
   /// get surah by number and edition
   final surah = await quran_cloud.getSurahByEdition(1, editionsQuery.first);
 
-```
+  /// get aya by number and edition
+  final aya = await quran_cloud.getAyaByNumber(2, editionsQuery.first);
 
-# Endpoints
-
-- [x] Editions
-- [x] Quran
-- [x] Juz
-- [x] Surah
-- [x] Aya
-- [ ] Manzil
-- [ ] Ruku
-- [ ] Page
-- [ ] Hizb
-- [ ] Quarter
-- [ ] Sajda
-- [ ] Meta
-
-# Features
-
-- [ ] cache (awaiting this PR https://github.com/hurshi/dio-http-cache/pull/84)
-- [ ] prayer times
-- [ ] docs
-- [ ] re-tray
+  print(aya.text); // الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+}

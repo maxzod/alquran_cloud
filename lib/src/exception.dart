@@ -1,6 +1,6 @@
-class MuslimException {
+class QuranCloudException {
   final dynamic error;
   final int? statusCode;
 
-  MuslimException(this.error, this.statusCode);
+  QuranCloudException(this.error, [this.statusCode]);
 }

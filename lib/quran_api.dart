@@ -2,6 +2,7 @@ library quran_api;
 
 export 'package:alquran_cloud/src/entites/index.dart';
 export 'package:alquran_cloud/src/repositories/index.dart';
+export 'package:alquran_cloud/src/exception.dart';
 
 class _AlquranCloud {
   bool enableLogs = false;

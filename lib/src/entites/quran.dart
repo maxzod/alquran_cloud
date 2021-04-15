@@ -19,9 +19,7 @@ class Quran extends Equatable {
 
   factory Quran.fromMap(Map<String, dynamic> map) {
     return Quran(
-      surahs: (map['surahs'] as List<Map<String, dynamic>>)
-          .map((x) => Surah.fromMap(x))
-          .toList(),
+      surahs: (map['surahs'] as List).map((x) => Surah.fromMap(x as Map<String, dynamic>)).toList(),
       edition: Edition.fromMap(map['edition'] as Map<String, dynamic>),
     );
   }

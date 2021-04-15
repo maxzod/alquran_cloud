@@ -7,7 +7,7 @@ import 'package:alquran_cloud/src/wrapper.dart';
 /// `format` - Specify a format. 'text' or 'audio'
 /// `language` - A 2 digit language code. Example: '`en`', '`fr`', etc.
 /// `type` - A valid type. Example - 'versebyverse', 'translation' etc.
-Future<List<Edition>> getEditions({
+Future<List<Edition>> getAllEditions({
   String? format,
   String? language,
   String? type,
@@ -42,19 +42,19 @@ Future<List<String>> getEditionFormat() async {
 /// `language` - is a 2 digit language code. Example: en for English, fr for French, ar for Arabic
 Future<List<Edition>> getAllEditionsForLanguage(String language) async {
   final res = await get('/edition/language/$language');
-  return (res['data'] as List<Map<String, dynamic>>).map<Edition>((e) => Edition.fromMap(e)).toList();
+  return (res['data'] as List).map<Edition>((e) => Edition.fromMap(e as Map<String, dynamic>)).toList();
 }
 
 /// Lists all editions for a given type
 /// `type` can be 'translation', 'tafsir' or another result returned in 4 above
 Future<List<Edition>> getAllEditionsForType(String type) async {
   final res = await get('/edition/type/$type');
-  return (res['data'] as List<Map<String, dynamic>>).map<Edition>((e) => Edition.fromMap(e)).toList();
+  return (res['data'] as List).map<Edition>((e) => Edition.fromMap(e as Map<String, dynamic>)).toList();
 }
 
 /// Lists all editions for a given type
 /// `type` can be 'translation', 'tafsir' or another result returned in 4 above
 Future<List<Edition>> getAllEditionsByFormat(String format) async {
   final res = await get('/edition/format/$format');
-  return (res['data'] as List<Map<String, dynamic>>).map<Edition>((e) => Edition.fromMap(e)).toList();
+  return (res['data'] as List).map<Edition>((e) => Edition.fromMap(e as Map<String, dynamic>)).toList();
 }

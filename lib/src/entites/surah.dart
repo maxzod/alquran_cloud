@@ -5,7 +5,7 @@ class Surah extends Equatable {
   final String name;
   final String englishName;
   final String englishNameTranslation;
-  final int numberOfAyahs;
+  final int? numberOfAyahs;
   final String revelationType;
   const Surah({
     required this.number,
@@ -33,7 +33,7 @@ class Surah extends Equatable {
       name: map['name'] as String,
       englishName: map['englishName'] as String,
       englishNameTranslation: map['englishNameTranslation'] as String,
-      numberOfAyahs: map['numberOfAyahs'] as int,
+      numberOfAyahs: map['numberOfAyahs'] as int?,
       revelationType: map['revelationType'] as String,
     );
   }
@@ -45,7 +45,7 @@ class Surah extends Equatable {
       name,
       englishName,
       englishNameTranslation,
-      numberOfAyahs,
+      if (numberOfAyahs != null) numberOfAyahs!,
       revelationType,
     ];
   }
