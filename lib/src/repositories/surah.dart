@@ -9,7 +9,9 @@ Future<List<Surah>> getQuranSurahs({
   int? limit,
 }) async {
   final res = await get('/surah', query: {'limit': limit, 'offset': offset});
-  return (res['data'] as List).map<Surah>((e) => Surah.fromMap(e as Map<String, dynamic>)).toList();
+  return (res['data'] as List)
+      .map<Surah>((e) => Surah.fromMap(e as Map<String, dynamic>))
+      .toList();
 }
 
 /// Returns the requested surah from a particular edition
@@ -20,11 +22,14 @@ Future<Surah> getSurahByEdition(int id, Edition edition) async {
 
 /// Returns the requested surah from multiple editions
 Future<List<Surah>> getSurahByMultiEdition(List<String> editions) async {
-  assert(editions.isEmpty, '[error][getSurahByEdition()] editions list can not be empty');
+  assert(editions.isEmpty,
+      '[error][getSurahByEdition()] editions list can not be empty');
   final buffer = StringBuffer(editions.first);
   for (var i = 1; i < editions.length; i++) {
     buffer.write(',${editions[i]}');
   }
   final res = await get('/surah/${buffer.toString()}');
-  return (res['data'] as List).map<Surah>((e) => Surah.fromMap(e as Map<String, dynamic>)).toList();
+  return (res['data'] as List)
+      .map<Surah>((e) => Surah.fromMap(e as Map<String, dynamic>))
+      .toList();
 }

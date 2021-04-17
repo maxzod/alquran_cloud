@@ -17,7 +17,9 @@ Future<List<Edition>> getAllEditions({
     if (language != null) 'language': language,
     if (type != null) 'type': type,
   });
-  return (res['data'] as List).map<Edition>((e) => Edition.fromMap(e as Map<String, dynamic>)).toList();
+  return (res['data'] as List)
+      .map<Edition>((e) => Edition.fromMap(e as Map<String, dynamic>))
+      .toList();
 }
 
 /// Lists all languages in which editions are available
@@ -42,19 +44,25 @@ Future<List<String>> getEditionFormat() async {
 /// `language` - is a 2 digit language code. Example: en for English, fr for French, ar for Arabic
 Future<List<Edition>> getAllEditionsForLanguage(String language) async {
   final res = await get('/edition/language/$language');
-  return (res['data'] as List).map<Edition>((e) => Edition.fromMap(e as Map<String, dynamic>)).toList();
+  return (res['data'] as List)
+      .map<Edition>((e) => Edition.fromMap(e as Map<String, dynamic>))
+      .toList();
 }
 
 /// Lists all editions for a given type
 /// `type` can be 'translation', 'tafsir' or another result returned in 4 above
 Future<List<Edition>> getAllEditionsForType(String type) async {
   final res = await get('/edition/type/$type');
-  return (res['data'] as List).map<Edition>((e) => Edition.fromMap(e as Map<String, dynamic>)).toList();
+  return (res['data'] as List)
+      .map<Edition>((e) => Edition.fromMap(e as Map<String, dynamic>))
+      .toList();
 }
 
 /// Lists all editions for a given type
 /// `type` can be 'translation', 'tafsir' or another result returned in 4 above
 Future<List<Edition>> getAllEditionsByFormat(String format) async {
   final res = await get('/edition/format/$format');
-  return (res['data'] as List).map<Edition>((e) => Edition.fromMap(e as Map<String, dynamic>)).toList();
+  return (res['data'] as List)
+      .map<Edition>((e) => Edition.fromMap(e as Map<String, dynamic>))
+      .toList();
 }

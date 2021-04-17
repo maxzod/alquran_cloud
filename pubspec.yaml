@@ -8,7 +8,6 @@ environment:
 dependencies:
   dio: ^4.0.0
   equatable: ^2.0.0
-  pretty_dio_logger: ^1.1.1
 
 dev_dependencies:
   lint: ^1.5.3

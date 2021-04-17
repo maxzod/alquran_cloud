@@ -43,6 +43,7 @@ void main(List<String> args) async {
 - [ ] Quarter
 - [ ] Sajda
 - [ ] Meta
+- [x] CDM (audio/image)
 
 # Features
 

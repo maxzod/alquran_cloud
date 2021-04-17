@@ -17,6 +17,9 @@ Future<List<Aya>> search({
   [error][search()] language or edition one of them must be null
   you cant search with both at the same time
   ''');
-  final res = await get('/search/$keyword/{{surah}}/${language ?? edition ?? ''}');
-  return (res['data'] as List).map<Aya>((e) => Aya.fromMap(e as Map<String, dynamic>)).toList();
+  final res =
+      await get('/search/$keyword/{{surah}}/${language ?? edition ?? ''}');
+  return (res['data'] as List)
+      .map<Aya>((e) => Aya.fromMap(e as Map<String, dynamic>))
+      .toList();
 }

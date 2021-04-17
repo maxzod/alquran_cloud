@@ -1,8 +1,11 @@
+import 'dart:developer';
+
 import 'package:alquran_cloud/alquran_cloud.dart' as quran_cloud;
 
 Future<void> main(List<String> args) async {
-  /// to enable logs (disabled by default)
-  quran_cloud.quranCloud.enableLogs = true;
+  // Cache still in progress
+  //// to enable cache (enabled by default)
+  quran_cloud.quranCloud.enableCache = true;
 
   /// use edition identifer to determine which edition of the quran to get
   final allEditions = await quran_cloud.getAllEditions();
@@ -14,13 +17,8 @@ Future<void> main(List<String> args) async {
     type: 'quran', // user .getEditionTypes() to get all available types
   );
 
-  final quran = await quran_cloud.getQuranByEdition(allEditions.first);
-
-  /// get surah by number and edition
-  final surah = await quran_cloud.getSurahByEdition(1, editionsQuery.first);
-
   /// get aya by number and edition
   final aya = await quran_cloud.getAyaByNumber(2, editionsQuery.first);
 
-  print(aya.text); // الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+  log(aya.text); // الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
 }

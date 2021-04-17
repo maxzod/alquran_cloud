@@ -5,7 +5,6 @@ export 'package:alquran_cloud/src/repositories/index.dart';
 export 'package:alquran_cloud/src/exception.dart';
 
 class _AlquranCloud {
-  bool enableLogs = false;
   bool enableCache = true;
 }
 

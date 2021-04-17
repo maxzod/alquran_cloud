@@ -4,3 +4,4 @@ export 'package:alquran_cloud/src/repositories/juz.dart';
 export 'package:alquran_cloud/src/repositories/surah.dart';
 export 'package:alquran_cloud/src/repositories/aya.dart';
 export 'package:alquran_cloud/src/repositories/search.dart';
+export 'package:alquran_cloud/src/repositories/cdn.dart';
