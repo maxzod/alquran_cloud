@@ -1,3 +1,4 @@
+import 'package:alquran_cloud/alquran_cloud.dart';
 import 'package:equatable/equatable.dart';
 
 class Surah extends Equatable {
@@ -7,6 +8,7 @@ class Surah extends Equatable {
   final String englishNameTranslation;
   final int? numberOfAyahs;
   final String revelationType;
+  final List<Aya>? ayahs;
   const Surah({
     required this.number,
     required this.name,
@@ -14,6 +16,7 @@ class Surah extends Equatable {
     required this.englishNameTranslation,
     required this.numberOfAyahs,
     required this.revelationType,
+    this.ayahs,
   });
 
   Map<String, dynamic> toMap() {
@@ -24,6 +27,7 @@ class Surah extends Equatable {
       'englishNameTranslation': englishNameTranslation,
       'numberOfAyahs': numberOfAyahs,
       'revelationType': revelationType,
+      'ayahs': ayahs,
     };
   }
 
@@ -35,6 +39,7 @@ class Surah extends Equatable {
       englishNameTranslation: map['englishNameTranslation'] as String,
       numberOfAyahs: map['numberOfAyahs'] as int?,
       revelationType: map['revelationType'] as String,
+      ayahs: (map['ayahs'] as List).map((x) => Aya.fromMap(x as Map<String, dynamic>)).toList(),
     );
   }
 
