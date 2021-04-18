@@ -44,8 +44,7 @@ class Aya extends Equatable {
       'hizbQuarter': hizbQuarter,
       'sajda': sajda,
       if (audio != null) 'audio': audio,
-      if (audioSecondary != null && audioSecondary!.isNotEmpty)
-        'audioSecondary': audioSecondary,
+      if (audioSecondary != null) 'audioSecondary': audioSecondary,
     };
   }
 

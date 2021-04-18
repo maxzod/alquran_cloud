@@ -39,7 +39,7 @@ class Surah extends Equatable {
       englishNameTranslation: map['englishNameTranslation'] as String,
       numberOfAyahs: map['numberOfAyahs'] as int?,
       revelationType: map['revelationType'] as String,
-      ayahs: (map['ayahs'] as List).map((x) => Aya.fromMap(x as Map<String, dynamic>)).toList(),
+      ayahs: (map['ayahs'] as List? ?? []).map((x) => Aya.fromMap(x as Map<String, dynamic>)).toList(),
     );
   }
 
